@@ -1,6 +1,6 @@
-require "highcharts.com/version"
+require "highcharts/version"
 
-module Highcharts.com
+module Highcharts
   module Rails
     class Engine < ::Rails::Engine
     end
