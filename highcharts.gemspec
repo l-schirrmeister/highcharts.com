@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'highcharts.com/version'
+require 'highcharts/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "highcharts.com"
+  gem.name          = "highcharts"
   gem.version       = Highcharts.com::VERSION
   gem.authors       = ["Joel Meyer-Hamme"]
   gem.email         = ["j.meyer-hamme@seolytics.net"]
