@@ -1,5 +1,8 @@
 require "highcharts.com/version"
 
 module Highcharts.com
-  # Your code goes here...
+  module Rails
+    class Engine < ::Rails::Engine
+    end
+  end
 end
