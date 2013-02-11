@@ -13,7 +13,7 @@ Support:           www.highcharts.com
 
 Add this line to your application's Gemfile:
 
-    gem 'highcharts.com'
+    gem 'highcharts', github: 'joelmeyerhamme/highcharts.com'
 
 And then execute:
 
@@ -25,12 +25,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Require highcharts in app/assets/javascript/application.js:
+    //= require highcharts
 
 ## Contributing
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+1. Take a look at https://github.com/highslide-software/highcharts.com
