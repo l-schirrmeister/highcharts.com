@@ -26,6 +26,7 @@ Or install it yourself as:
 ## Usage
 
 Require highcharts in app/assets/javascript/application.js:
+
     //= require highcharts
 
 ## Contributing
