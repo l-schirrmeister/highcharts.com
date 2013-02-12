@@ -418,16 +418,14 @@ dateFormat = function (format, timestamp, capitalize) {
     fullYear = date[getFullYear](),
     lang = defaultOptions.lang,
     langWeekdays = lang.weekdays,
-    /* // uncomment this and the 'W' format key below to enable week numbers
-    weekNumber = function () {
-      var clone = new Date(date.valueOf()),
-        day = clone[getDay]() == 0 ? 7 : clone[getDay](),
-        dayNumber;
-      clone.setDate(clone[getDate]() + 4 - day);
-      dayNumber = mathFloor((clone.getTime() - new Date(clone[getFullYear](), 0, 1, -6)) / 86400000);
-      return 1 + mathFloor(dayNumber / 7);
+    isoWeekYear = function(){
+      var jan1, w, d = date;
+      d.setDate(d.getDate()+4-(d.getDay()||7));
+      jan1 = new Date(d.getFullYear(),0,1);
+      w = Math.ceil((((d-jan1)/86400000)+1)/7);
+      return {year: d.getFullYear(), week: w };
     },
-    */
+
 
     // list all format keys
     replacements = {
@@ -441,8 +439,7 @@ dateFormat = function (format, timestamp, capitalize) {
       //'u': , //ISO-8601 numeric representation of the day of the week  1 (for Monday) though 7 (for Sunday)
       //'w': , //Numeric representation of the day of the week 0 (for Sunday) through 6 (for Saturday)
 
-      // Week (none implemented)
-      //'W': weekNumber(),
+      // Week
       'V': isoWeekYear().week,
       //'U': , //Week number of the given year, starting with the first Sunday as the first week 13 (for the 13th full week of the year)
       //'W': , //A numeric representation of the week of the year, starting with the first Monday as the first week  46 (for the 46th week of the year beginning with a Monday)
