@@ -465,7 +465,7 @@ dateFormat = function (format, timestamp, capitalize) {
       'p': hours < 12 ? 'AM' : 'PM', // Upper case AM or PM
       'P': hours < 12 ? 'am' : 'pm', // Lower case AM or PM
       'S': pad(date.getSeconds()), // Two digits seconds, 00 through  59
-      'L': pad(mathRound(timestamp % 1000), 3) // Milliseconds (naming from Ruby)
+      'L': pad(mathRound(timestamp % 1000), 3), // Milliseconds (naming from Ruby)
       //'k': , //Two digit representation of the hour in 24-hour format, with a space preceding single digits   0 through 23
       //'r': , //Same as "%I:%M:%S %p"
       //'R': , //Same as "%H:%M"
@@ -476,7 +476,7 @@ dateFormat = function (format, timestamp, capitalize) {
 
       // Time and Date Stamps
       //'c': , //Preferred date and time stamp based on locale
-      //'D': , //Same as "%m/%d/%y"
+      'D': (pad(month + 1)+ "/" + pad(dayOfMonth) + "/" +  fullYear.toString().substr(2, 2))//Same as "%m/%d/%y"
       //'F': , //Same as "%Y-%m-%d" (commonly used in database datestamps)
       //'s': , //Unix Epoch Time timestamp (same as the time() function)
       //'x': , //Preferred date representation based on locale, without the time
